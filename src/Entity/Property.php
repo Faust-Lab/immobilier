@@ -53,7 +53,7 @@ class Property
     private $price;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=255)
      */
     private $heat;
 
@@ -81,6 +81,7 @@ class Property
      * @ORM\Column(type="datetime")
      */
     private $created_at;
+
 
     public function __construct(){
         $this->created_at = \DateTime();
@@ -179,12 +180,12 @@ class Property
         return $this;
     }
 
-    public function getHeat(): ?int
+    public function getHeat(): ?string
     {
         return $this->heat;
     }
 
-    public function setHeat(int $heat): self
+    public function setHeat(string $heat): self
     {
         $this->heat = $heat;
 
